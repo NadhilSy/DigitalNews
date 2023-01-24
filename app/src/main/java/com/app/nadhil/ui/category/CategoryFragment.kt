@@ -46,6 +46,18 @@ class CategoryFragment : Fragment() {
                 val directions = CategoryFragmentDirections.actionCategoryFragmentToNewsSourceFragment(category = "general")
                 findNavController().navigate(directions)
             }
+            btnScience.setOnClickListener {
+                val directions = CategoryFragmentDirections.actionCategoryFragmentToNewsSourceFragment(category = "science" )
+                findNavController().navigate(directions)
+            }
+            btnSport.setOnClickListener{
+                val directions = CategoryFragmentDirections.actionCategoryFragmentToNewsSourceFragment(category = "sports")
+                findNavController().navigate(directions)
+            }
+            btnTechnology.setOnClickListener {
+                val directions = CategoryFragmentDirections.actionCategoryFragmentToNewsSourceFragment(category = "technology")
+                findNavController().navigate(directions)
+            }
         }
     }
 
