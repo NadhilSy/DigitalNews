@@ -41,7 +41,7 @@
     <fragment
         android:id="@+id/articleDetailFragment"
         android:name="com.app.nadhil.ui.articledetail.ArticleDetailFragment"
-        android:label="Article"
+        android:label="ArticleDetail"
         tools:layout="@layout/fragment_article_detail">
         <argument
             android:name="uri"
