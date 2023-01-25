@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -109,8 +110,10 @@ class ArticleFragment : DaggerFragment() {
     private fun onCellClickListener(data: Article, forView : Boolean){
         val intent: Intent
         if (forView){
-            val uri = Uri.parse(data.url)
-            intent = Intent(Intent.ACTION_VIEW, uri)
+            val uri = data.url
+//            intent = Intent(Intent.ACTION_VIEW, uri)
+            val action = ArticleFragmentDirections.actionArticleFragmentToArticleDetailFragment(uri)
+            findNavController().navigate(action)
         } else {
             val i = Intent().apply {
                 action = Intent.ACTION_SEND
@@ -119,8 +122,9 @@ class ArticleFragment : DaggerFragment() {
                 type = "text/plain"
             }
             intent = Intent.createChooser(i, null)
+            startActivity(intent)
         }
-        startActivity(intent)
+
     }
 
     override fun onDetach() {

@@ -31,8 +31,20 @@
         android:name="com.app.nadhil.ui.article.ArticleFragment"
         android:label="Article"
         tools:layout="@layout/fragment_article">
+        <action
+            android:id="@+id/action_articleFragment_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment" />
         <argument
             android:name="sourceId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleDetailFragment"
+        android:name="com.app.nadhil.ui.articledetail.ArticleDetailFragment"
+        android:label="Article"
+        tools:layout="@layout/fragment_article_detail">
+        <argument
+            android:name="uri"
             app:argType="string" />
     </fragment>
 
